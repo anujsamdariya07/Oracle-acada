@@ -110,8 +110,22 @@ function App() {
           </div>
         </section>
 
+        {/* Announcement Section */}
+        <section id='announcement' className='py-8 text-[#161513]'>
+          <div className='container mx-auto px-4'>
+            <h2 className='text-3xl font-bold text-center md:text-left mb-4'>
+              Announcement
+            </h2>
+            <img
+              src='https://raw.githubusercontent.com/anujsamdariya07/Oracle-acada/refs/heads/main/src/announcement-image.jpg'
+              alt='Announcement'
+              className='w-full rounded-lg shadow-lg'
+            />
+          </div>
+        </section>
+
         {/* About Section (No change) */}
-        <section className='bg-[#312D2A] p-10 shadow-lg text-white'>
+        <section id='about' className='bg-[#312D2A] p-10 shadow-lg text-white'>
           <div className='flex items-center gap-3 mb-6'>
             <Info className='w-8 h-8 text-white' />
             <h2 className='text-3xl font-bold'>About the Contest</h2>
@@ -252,56 +266,61 @@ function PrizeCard({ place, prize }: { place: string; prize: string }) {
   );
 }
 
-
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-[#312D2A] text-white p-4 shadow-lg relative">
-      <div className="container mx-auto flex justify-between items-center">
+    <nav className='bg-[#312D2A] text-white p-4 shadow-lg relative'>
+      <div className='container mx-auto flex justify-between items-center'>
         {/* Left: Oracle Logo */}
-        <a href="#" className="flex items-center">
+        <a href='#' className='flex items-center'>
           <img
-            src="https://seekvectors.com/storage/images/Oracle%20Corporation-01.svg"
-            alt="Oracle Logo"
-            className="h-10"
+            src='https://seekvectors.com/storage/images/Oracle%20Corporation-01.svg'
+            alt='Oracle Logo'
+            className='h-10'
           />
         </a>
 
         {/* Right Side (Desktop & Mobile View) */}
-        <div className="flex items-center space-x-6">
+        <div className='flex items-center space-x-6'>
           {/* Announcement Link Always Visible */}
           <a
-            href="#announcement"
-            className="relative text-lg font-semibold hover:text-yellow-400 transition"
+            href='#announcement'
+            className='relative text-lg font-semibold hover:text-yellow-400 transition'
           >
             Announcement
-            <span className="absolute -top-2 -right-4 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold animate-bounce">
+            <span className='absolute -top-2 -right-4 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold animate-bounce'>
               !
             </span>
           </a>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-white focus:outline-none"
+            className='md:hidden text-white focus:outline-none'
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
 
           {/* Desktop Links */}
-          <div className="hidden md:flex space-x-6">
-            <a href="#important-links" className="hover:text-gray-300 transition">
+          <div className='hidden md:flex space-x-6'>
+          <a
+            href='#important-dates'
+            className='block hover:text-gray-300 transition'
+          >
+            Important Dates
+          </a>
+            <a
+              href='#important-links'
+              className='hover:text-gray-300 transition'
+            >
               Important Links
             </a>
-            <a href="#register" className="hover:text-gray-300 transition">
+            <a href='#register' className='hover:text-gray-300 transition'>
               Register
             </a>
-            <a href="#about" className="hover:text-gray-300 transition">
+            <a href='#about' className='hover:text-gray-300 transition'>
               About
-            </a>
-            <a href="#procedure" className="hover:text-gray-300 transition">
-              Procedure
             </a>
           </div>
         </div>
@@ -309,24 +328,29 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden mt-4 space-y-4 text-center bg-[#312D2A] p-4 rounded-lg">
-          <a href="#important-links" className="block hover:text-gray-300 transition">
+        <div className='md:hidden mt-4 space-y-4 text-center bg-[#312D2A] p-4 rounded-lg'>
+          <a
+            href='#important-dates'
+            className='block hover:text-gray-300 transition'
+          >
+            Important Dates
+          </a>
+          <a
+            href='#important-links'
+            className='block hover:text-gray-300 transition'
+          >
             Important Links
           </a>
-          <a href="#register" className="block hover:text-gray-300 transition">
+          <a href='#register' className='block hover:text-gray-300 transition'>
             Register
           </a>
-          <a href="#about" className="block hover:text-gray-300 transition">
+          <a href='#about' className='block hover:text-gray-300 transition'>
             About
-          </a>
-          <a href="#procedure" className="block hover:text-gray-300 transition">
-            Procedure
           </a>
         </div>
       )}
     </nav>
   );
 };
-
 
 export default App;
