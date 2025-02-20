@@ -304,12 +304,12 @@ const Navbar = () => {
 
           {/* Desktop Links */}
           <div className='hidden md:flex space-x-6'>
-          <a
-            href='#important-dates'
-            className='block hover:text-gray-300 transition'
-          >
-            Important Dates
-          </a>
+            <a
+              href='#important-dates'
+              className='block hover:text-gray-300 transition'
+            >
+              Important Dates
+            </a>
             <a
               href='#important-links'
               className='hover:text-gray-300 transition'
