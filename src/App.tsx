@@ -40,7 +40,7 @@ function App() {
             Showcase your innovation and creativity in the world of low-code
             development
           </p>
-          <a href="#register">
+          <a href='#register'>
             <button className='w-fit px-6 py-3 text-lg font-semibold text-white bg-[#312D2A] rounded-xl shadow-lg transform transition-all duration-300 hover:scale-105 hover:bg-opacity-90 hover:shadow-2xl relative overflow-hidden group'>
               <span className='absolute inset-0 bg-gradient-to-r from-[#4A4038] to-[#312D2A] opacity-0 group-hover:opacity-100 transition-opacity duration-300'></span>
               <span className='relative z-10'>Register Now</span>
@@ -69,7 +69,7 @@ function App() {
             </div>
             <div className='grid md:grid-cols-2 lg:grid-cols-2 gap-6'>
               <DateCard title='Registration Opens' date='February 13, 2025' />
-              <DateCard title='Submission Deadline' date='February 21, 2025' />
+              <DateCard title='Submission Deadline' date='February 24, 2025' />
               <DateCard title='Final Round' date='TBD' />
               <DateCard title='Results Announcement' date='TBD' />
             </div>
@@ -155,7 +155,8 @@ function App() {
             <br />
             1. Register your winning team. <br />
             2. Brain storm your idea. <br />
-            3. Develop your application using only Oracle Cloud Infrastructure and deploy it.
+            3. Develop your application using only Oracle Cloud Infrastructure
+            and deploy it.
             <br />
             4. Submit your application through a presentation between February
             18th - 21st. (Also provide the deployed link) <br />
@@ -251,59 +252,74 @@ function PrizeCard({ place, prize }: { place: string; prize: string }) {
   );
 }
 
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className='bg-[#312D2A] text-white p-4'>
-      <div className='container mx-auto flex justify-between items-center'>
-        {/* Left: Logo */}
-        <a href='#' className='flex items-center'>
+    <nav className="bg-[#312D2A] text-white p-4 shadow-lg relative">
+      <div className="container mx-auto flex justify-between items-center">
+        {/* Left: Oracle Logo */}
+        <a href="#" className="flex items-center">
           <img
-            src='https://seekvectors.com/storage/images/Oracle%20Corporation-01.svg'
-            alt='Oracle Logo'
-            className='h-10'
+            src="https://seekvectors.com/storage/images/Oracle%20Corporation-01.svg"
+            alt="Oracle Logo"
+            className="h-10"
           />
         </a>
 
-        {/* Right: Desktop Links */}
-        <div className='hidden md:flex space-x-6'>
-          <a href='#' className='hover:text-gray-300 transition'>
-            Important Links
+        {/* Right Side (Desktop & Mobile View) */}
+        <div className="flex items-center space-x-6">
+          {/* Announcement Link Always Visible */}
+          <a
+            href="#announcement"
+            className="relative text-lg font-semibold hover:text-yellow-400 transition"
+          >
+            Announcement
+            <span className="absolute -top-2 -right-4 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs font-bold animate-bounce">
+              !
+            </span>
           </a>
-          <a href='#' className='hover:text-gray-300 transition'>
-            Register
-          </a>
-          <a href='#' className='hover:text-gray-300 transition'>
-            About
-          </a>
-          <a href='#' className='hover:text-gray-300 transition'>
-            Procedure
-          </a>
-        </div>
 
-        {/* Right: Mobile Menu Button */}
-        <button
-          className='md:hidden text-white focus:outline-none'
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden text-white focus:outline-none"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+
+          {/* Desktop Links */}
+          <div className="hidden md:flex space-x-6">
+            <a href="#important-links" className="hover:text-gray-300 transition">
+              Important Links
+            </a>
+            <a href="#register" className="hover:text-gray-300 transition">
+              Register
+            </a>
+            <a href="#about" className="hover:text-gray-300 transition">
+              About
+            </a>
+            <a href="#procedure" className="hover:text-gray-300 transition">
+              Procedure
+            </a>
+          </div>
+        </div>
       </div>
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className='md:hidden mt-4 space-y-4 text-center'>
-          <a href='#' className='block hover:text-gray-300 transition'>
+        <div className="md:hidden mt-4 space-y-4 text-center bg-[#312D2A] p-4 rounded-lg">
+          <a href="#important-links" className="block hover:text-gray-300 transition">
             Important Links
           </a>
-          <a href='#' className='block hover:text-gray-300 transition'>
+          <a href="#register" className="block hover:text-gray-300 transition">
             Register
           </a>
-          <a href='#' className='block hover:text-gray-300 transition'>
+          <a href="#about" className="block hover:text-gray-300 transition">
             About
           </a>
-          <a href='#' className='block hover:text-gray-300 transition'>
+          <a href="#procedure" className="block hover:text-gray-300 transition">
             Procedure
           </a>
         </div>
@@ -311,5 +327,6 @@ const Navbar = () => {
     </nav>
   );
 };
+
 
 export default App;
