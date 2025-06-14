@@ -242,6 +242,9 @@ function App() {
           <p className='text-center'>
             © 2024 Oracle ACAD Low Code Contest. All rights reserved.
           </p>
+           <p className='text-center'>
+            Made with ❤️ by <a href="https://www.linkedin.com/in/harsh-kumar-b0b879245/">Harsh (HRS)</a> & <a href="https://www.linkedin.com/in/anuj-samdariya-569162254/">Anuj 🔪</a>
+          </p>
         </div>
       </footer>
     </div>
